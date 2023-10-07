@@ -41,8 +41,19 @@
             dateTimePicker2 = new DateTimePicker();
             dateTimePicker1 = new DateTimePicker();
             getInfoButton = new Button();
+            dataGridView1 = new DataGridView();
+            tickcol = new DataGridViewTextBoxColumn();
+            periodcol = new DataGridViewTextBoxColumn();
+            datecol = new DataGridViewTextBoxColumn();
+            opencol = new DataGridViewTextBoxColumn();
+            highcol = new DataGridViewTextBoxColumn();
+            lowcol = new DataGridViewTextBoxColumn();
+            closecol = new DataGridViewTextBoxColumn();
+            volcol = new DataGridViewTextBoxColumn();
+            getFileButton = new Button();
             panel1.SuspendLayout();
             groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             SuspendLayout();
             // 
             // label1
@@ -54,7 +65,6 @@
             label1.Size = new Size(89, 15);
             label1.TabIndex = 0;
             label1.Text = "Ticker Selection";
-            label1.Click += label1_Click;
             // 
             // tickerSelectionBox
             // 
@@ -71,6 +81,7 @@
             // 
             label2.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             label2.AutoSize = true;
+            label2.Enabled = false;
             label2.Location = new Point(208, 35);
             label2.Name = "label2";
             label2.Size = new Size(46, 15);
@@ -169,18 +180,81 @@
             // 
             // getInfoButton
             // 
-            getInfoButton.Location = new Point(187, 199);
+            getInfoButton.Location = new Point(248, 199);
             getInfoButton.Name = "getInfoButton";
             getInfoButton.Size = new Size(75, 23);
             getInfoButton.TabIndex = 9;
             getInfoButton.Text = "raassssclattt";
             getInfoButton.UseVisualStyleBackColor = true;
+            getInfoButton.Click += getInfoButton_Click;
+            // 
+            // dataGridView1
+            // 
+            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridView1.Columns.AddRange(new DataGridViewColumn[] { tickcol, periodcol, datecol, opencol, highcol, lowcol, closecol, volcol });
+            dataGridView1.Location = new Point(12, 266);
+            dataGridView1.Name = "dataGridView1";
+            dataGridView1.RowTemplate.Height = 25;
+            dataGridView1.Size = new Size(469, 172);
+            dataGridView1.TabIndex = 10;
+            // 
+            // tickcol
+            // 
+            tickcol.HeaderText = "Ticker";
+            tickcol.Name = "tickcol";
+            // 
+            // periodcol
+            // 
+            periodcol.HeaderText = "Period";
+            periodcol.Name = "periodcol";
+            // 
+            // datecol
+            // 
+            datecol.HeaderText = "Date";
+            datecol.Name = "datecol";
+            // 
+            // opencol
+            // 
+            opencol.HeaderText = "Open";
+            opencol.Name = "opencol";
+            // 
+            // highcol
+            // 
+            highcol.HeaderText = "High";
+            highcol.Name = "highcol";
+            // 
+            // lowcol
+            // 
+            lowcol.HeaderText = "Low";
+            lowcol.Name = "lowcol";
+            // 
+            // closecol
+            // 
+            closecol.HeaderText = "Close";
+            closecol.Name = "closecol";
+            // 
+            // volcol
+            // 
+            volcol.HeaderText = "Volume";
+            volcol.Name = "volcol";
+            // 
+            // getFileButton
+            // 
+            getFileButton.Location = new Point(139, 199);
+            getFileButton.Name = "getFileButton";
+            getFileButton.Size = new Size(75, 23);
+            getFileButton.TabIndex = 11;
+            getFileButton.Text = "Figgy";
+            getFileButton.UseVisualStyleBackColor = true;
+            getFileButton.Click += getFileButton_Click;
             // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(493, 450);
+            Controls.Add(getFileButton);
+            Controls.Add(dataGridView1);
             Controls.Add(getInfoButton);
             Controls.Add(groupBox1);
             Controls.Add(panel1);
@@ -193,6 +267,7 @@
             panel1.PerformLayout();
             groupBox1.ResumeLayout(false);
             groupBox1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -212,5 +287,15 @@
         private DateTimePicker dateTimePicker1;
         private DateTimePicker dateTimePicker2;
         private Button getInfoButton;
+        private DataGridView dataGridView1;
+        private DataGridViewTextBoxColumn tickcol;
+        private DataGridViewTextBoxColumn periodcol;
+        private DataGridViewTextBoxColumn datecol;
+        private DataGridViewTextBoxColumn opencol;
+        private DataGridViewTextBoxColumn highcol;
+        private DataGridViewTextBoxColumn lowcol;
+        private DataGridViewTextBoxColumn closecol;
+        private DataGridViewTextBoxColumn volcol;
+        private Button getFileButton;
     }
 }
