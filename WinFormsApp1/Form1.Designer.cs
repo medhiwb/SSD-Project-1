@@ -32,24 +32,16 @@
             tickerSelectionBox = new ComboBox();
             label2 = new Label();
             panel1 = new Panel();
-            rbuttonYearly = new RadioButton();
             rbuttonMonthly = new RadioButton();
+            rbuttonWeekly = new RadioButton();
             rbuttonDaily = new RadioButton();
             label4 = new Label();
             label5 = new Label();
             groupBox1 = new GroupBox();
-            dateTimePicker2 = new DateTimePicker();
-            dateTimePicker1 = new DateTimePicker();
+            endTimePicker = new DateTimePicker();
+            startTimePicker = new DateTimePicker();
             getInfoButton = new Button();
             dataGridView1 = new DataGridView();
-            tickcol = new DataGridViewTextBoxColumn();
-            periodcol = new DataGridViewTextBoxColumn();
-            datecol = new DataGridViewTextBoxColumn();
-            opencol = new DataGridViewTextBoxColumn();
-            highcol = new DataGridViewTextBoxColumn();
-            lowcol = new DataGridViewTextBoxColumn();
-            closecol = new DataGridViewTextBoxColumn();
-            volcol = new DataGridViewTextBoxColumn();
             getFileButton = new Button();
             panel1.SuspendLayout();
             groupBox1.SuspendLayout();
@@ -91,35 +83,35 @@
             // panel1
             // 
             panel1.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
-            panel1.Controls.Add(rbuttonYearly);
             panel1.Controls.Add(rbuttonMonthly);
+            panel1.Controls.Add(rbuttonWeekly);
             panel1.Controls.Add(rbuttonDaily);
             panel1.Location = new Point(208, 53);
             panel1.Name = "panel1";
             panel1.Size = new Size(199, 34);
             panel1.TabIndex = 3;
             // 
-            // rbuttonYearly
-            // 
-            rbuttonYearly.AutoSize = true;
-            rbuttonYearly.Location = new Point(136, 4);
-            rbuttonYearly.Name = "rbuttonYearly";
-            rbuttonYearly.Size = new Size(56, 19);
-            rbuttonYearly.TabIndex = 0;
-            rbuttonYearly.TabStop = true;
-            rbuttonYearly.Text = "Yearly";
-            rbuttonYearly.UseVisualStyleBackColor = true;
-            // 
             // rbuttonMonthly
             // 
             rbuttonMonthly.AutoSize = true;
-            rbuttonMonthly.Location = new Point(60, 4);
+            rbuttonMonthly.Location = new Point(136, 4);
             rbuttonMonthly.Name = "rbuttonMonthly";
             rbuttonMonthly.Size = new Size(70, 19);
             rbuttonMonthly.TabIndex = 0;
             rbuttonMonthly.TabStop = true;
             rbuttonMonthly.Text = "Monthly";
             rbuttonMonthly.UseVisualStyleBackColor = true;
+            // 
+            // rbuttonWeekly
+            // 
+            rbuttonWeekly.AutoSize = true;
+            rbuttonWeekly.Location = new Point(60, 4);
+            rbuttonWeekly.Name = "rbuttonWeekly";
+            rbuttonWeekly.Size = new Size(63, 19);
+            rbuttonWeekly.TabIndex = 0;
+            rbuttonWeekly.TabStop = true;
+            rbuttonWeekly.Text = "Weekly";
+            rbuttonWeekly.UseVisualStyleBackColor = true;
             // 
             // rbuttonDaily
             // 
@@ -153,8 +145,8 @@
             // groupBox1
             // 
             groupBox1.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
-            groupBox1.Controls.Add(dateTimePicker2);
-            groupBox1.Controls.Add(dateTimePicker1);
+            groupBox1.Controls.Add(endTimePicker);
+            groupBox1.Controls.Add(startTimePicker);
             groupBox1.Controls.Add(label5);
             groupBox1.Controls.Add(label4);
             groupBox1.Location = new Point(55, 93);
@@ -164,19 +156,19 @@
             groupBox1.TabStop = false;
             groupBox1.Text = "Date Range";
             // 
-            // dateTimePicker2
+            // endTimePicker
             // 
-            dateTimePicker2.Location = new Point(95, 51);
-            dateTimePicker2.Name = "dateTimePicker2";
-            dateTimePicker2.Size = new Size(200, 23);
-            dateTimePicker2.TabIndex = 8;
+            endTimePicker.Location = new Point(95, 51);
+            endTimePicker.Name = "endTimePicker";
+            endTimePicker.Size = new Size(200, 23);
+            endTimePicker.TabIndex = 8;
             // 
-            // dateTimePicker1
+            // startTimePicker
             // 
-            dateTimePicker1.Location = new Point(95, 22);
-            dateTimePicker1.Name = "dateTimePicker1";
-            dateTimePicker1.Size = new Size(200, 23);
-            dateTimePicker1.TabIndex = 0;
+            startTimePicker.Location = new Point(95, 22);
+            startTimePicker.Name = "startTimePicker";
+            startTimePicker.Size = new Size(200, 23);
+            startTimePicker.TabIndex = 0;
             // 
             // getInfoButton
             // 
@@ -184,59 +176,18 @@
             getInfoButton.Name = "getInfoButton";
             getInfoButton.Size = new Size(75, 23);
             getInfoButton.TabIndex = 9;
-            getInfoButton.Text = "raassssclattt";
+            getInfoButton.Text = "Get Info";
             getInfoButton.UseVisualStyleBackColor = true;
             getInfoButton.Click += getInfoButton_Click;
             // 
             // dataGridView1
             // 
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Columns.AddRange(new DataGridViewColumn[] { tickcol, periodcol, datecol, opencol, highcol, lowcol, closecol, volcol });
             dataGridView1.Location = new Point(12, 266);
             dataGridView1.Name = "dataGridView1";
             dataGridView1.RowTemplate.Height = 25;
             dataGridView1.Size = new Size(469, 172);
             dataGridView1.TabIndex = 10;
-            // 
-            // tickcol
-            // 
-            tickcol.HeaderText = "Ticker";
-            tickcol.Name = "tickcol";
-            // 
-            // periodcol
-            // 
-            periodcol.HeaderText = "Period";
-            periodcol.Name = "periodcol";
-            // 
-            // datecol
-            // 
-            datecol.HeaderText = "Date";
-            datecol.Name = "datecol";
-            // 
-            // opencol
-            // 
-            opencol.HeaderText = "Open";
-            opencol.Name = "opencol";
-            // 
-            // highcol
-            // 
-            highcol.HeaderText = "High";
-            highcol.Name = "highcol";
-            // 
-            // lowcol
-            // 
-            lowcol.HeaderText = "Low";
-            lowcol.Name = "lowcol";
-            // 
-            // closecol
-            // 
-            closecol.HeaderText = "Close";
-            closecol.Name = "closecol";
-            // 
-            // volcol
-            // 
-            volcol.HeaderText = "Volume";
-            volcol.Name = "volcol";
             // 
             // getFileButton
             // 
@@ -244,7 +195,7 @@
             getFileButton.Name = "getFileButton";
             getFileButton.Size = new Size(75, 23);
             getFileButton.TabIndex = 11;
-            getFileButton.Text = "Figgy";
+            getFileButton.Text = "Browse";
             getFileButton.UseVisualStyleBackColor = true;
             getFileButton.Click += getFileButton_Click;
             // 
@@ -278,24 +229,16 @@
         private ComboBox tickerSelectionBox;
         private Label label2;
         private Panel panel1;
-        private RadioButton rbuttonYearly;
         private RadioButton rbuttonMonthly;
+        private RadioButton rbuttonWeekly;
         private RadioButton rbuttonDaily;
         private Label label4;
         private Label label5;
         private GroupBox groupBox1;
-        private DateTimePicker dateTimePicker1;
-        private DateTimePicker dateTimePicker2;
+        private DateTimePicker startTimePicker;
+        private DateTimePicker endTimePicker;
         private Button getInfoButton;
         private DataGridView dataGridView1;
-        private DataGridViewTextBoxColumn tickcol;
-        private DataGridViewTextBoxColumn periodcol;
-        private DataGridViewTextBoxColumn datecol;
-        private DataGridViewTextBoxColumn opencol;
-        private DataGridViewTextBoxColumn highcol;
-        private DataGridViewTextBoxColumn lowcol;
-        private DataGridViewTextBoxColumn closecol;
-        private DataGridViewTextBoxColumn volcol;
         private Button getFileButton;
     }
 }
