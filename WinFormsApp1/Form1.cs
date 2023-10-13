@@ -32,7 +32,7 @@ namespace WinFormsApp1
             public decimal Close { get; set; }
             public long Volume { get; set; }
         }
-
+         
         string folderPath = "";
 
         // This function opens file browser to select CSV folder
