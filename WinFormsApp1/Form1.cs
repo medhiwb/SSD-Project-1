@@ -32,7 +32,7 @@ namespace WinFormsApp1
             public decimal Close { get; set; }
             public long Volume { get; set; }
         }
-         
+
         string folderPath = "";
 
         // This function opens file browser to select CSV folder
@@ -52,10 +52,14 @@ namespace WinFormsApp1
                     // Read the selected CSV file
                     List<StockData> allStockData = ReadCSVFile(filePath);
 
-                    // Optionally, you can apply some default filtering criteria here if needed.
+                    // Get the selected start date from the UI control (replace with the actual control you're using)
+                    DateTime startDate = startTimePicker.Value;
+
+                    // Get the selected end date from the UI control (replace with the actual control you're using)
+                    DateTime endDate = endTimePicker.Value;
 
                     // Apply filtering and sorting
-                    List<StockData> filteredData = FilterAndSortStockData(allStockData);
+                    List<StockData> filteredData = FilterAndSortStockData(allStockData, startDate, endDate);
 
                     // Display the filtered and sorted data in the DataGridView
                     if (dataGridViewResults != null)
@@ -69,7 +73,8 @@ namespace WinFormsApp1
                     }
                 }
             }
-        }     
+        }
+
 
         public List<StockData> ReadCSVFile(string filePath)
         {
@@ -87,17 +92,11 @@ namespace WinFormsApp1
                 return new List<StockData>(); // Return an empty list on error
             }
         }
-        public List<StockData> FilterAndSortStockData(List<StockData> data, DateTime startDate, DateTime endDate, decimal minOpen, decimal maxHigh, decimal minClose, long minVolume)
+        public List<StockData> FilterAndSortStockData(List<StockData> data, DateTime startDate, DateTime endDate)
         {
-            // Filter the data based on date, open, high, close, and volume
+            // Filter the data based on date
             List<StockData> filteredData = data
-                .Where(stock =>
-                    stock.Date >= startDate &&
-                    stock.Date <= endDate &&
-                    stock.Open >= minOpen &&
-                    stock.High <= maxHigh &&
-                    stock.Close >= minClose &&
-                    stock.Volume >= minVolume)
+                .Where(stock => stock.Date >= startDate && stock.Date <= endDate)
                 .ToList();
 
             // Sort the filtered data by date
@@ -105,30 +104,6 @@ namespace WinFormsApp1
 
             return filteredData;
         }
-
-        //public List<StockData> ReadCSVFolder(string folderPath)
-        //{
-        //    List<StockData> allStockData = new List<StockData>();
-
-        //    try
-        //    {
-        //        // Get a list of all CSV file paths in the folder
-        //        string[] csvFiles = Directory.GetFiles(folderPath, "*.csv");
-
-        //        foreach (string file in csvFiles)
-        //        {
-        //            // Read each CSV file and add its contents to the list
-        //            List<StockData> stockDataFromFile = ReadCSVFile(file);
-        //            allStockData.AddRange(stockDataFromFile);
-        //        }
-        //    }
-        //    catch (Exception ex)
-        //    {
-        //        MessageBox.Show($"Error reading CSV folder: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-        //    }
-
-        //    return allStockData;
-        //}
         private void Form1_FormClosing(object sender, FormClosingEventArgs e)
         {
             // Dispose of the DataGridView to release resources
