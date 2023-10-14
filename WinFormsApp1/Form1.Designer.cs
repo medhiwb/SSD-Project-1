@@ -48,7 +48,6 @@
             label4.Size = new Size(62, 32);
             label4.TabIndex = 6;
             label4.Text = "Start";
-            //label4.Click += label4_Click;
             // 
             // label5
             // 
@@ -68,10 +67,10 @@
             groupBox1.Controls.Add(label5);
             groupBox1.Controls.Add(label4);
             groupBox1.Location = new Point(15, 36);
-            groupBox1.Margin = new Padding(6, 6, 6, 6);
+            groupBox1.Margin = new Padding(6);
             groupBox1.Name = "groupBox1";
-            groupBox1.Padding = new Padding(6, 6, 6, 6);
-            groupBox1.Size = new Size(491, 213);
+            groupBox1.Padding = new Padding(6);
+            groupBox1.Size = new Size(491, 161);
             groupBox1.TabIndex = 8;
             groupBox1.TabStop = false;
             groupBox1.Text = "Date Range";
@@ -79,7 +78,7 @@
             // endTimePicker
             // 
             endTimePicker.Location = new Point(86, 98);
-            endTimePicker.Margin = new Padding(6, 6, 6, 6);
+            endTimePicker.Margin = new Padding(6);
             endTimePicker.Name = "endTimePicker";
             endTimePicker.Size = new Size(368, 39);
             endTimePicker.TabIndex = 8;
@@ -87,7 +86,7 @@
             // startTimePicker
             // 
             startTimePicker.Location = new Point(86, 47);
-            startTimePicker.Margin = new Padding(6, 6, 6, 6);
+            startTimePicker.Margin = new Padding(6);
             startTimePicker.Name = "startTimePicker";
             startTimePicker.Size = new Size(368, 39);
             startTimePicker.TabIndex = 0;
@@ -95,18 +94,18 @@
             // dataGridView1
             // 
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Location = new Point(540, 50);
-            dataGridView1.Margin = new Padding(6, 6, 6, 6);
+            dataGridView1.Location = new Point(553, 53);
+            dataGridView1.Margin = new Padding(6);
             dataGridView1.Name = "dataGridView1";
             dataGridView1.RowHeadersWidth = 82;
             dataGridView1.RowTemplate.Height = 25;
-            dataGridView1.Size = new Size(871, 367);
+            dataGridView1.Size = new Size(1005, 367);
             dataGridView1.TabIndex = 10;
             // 
             // getFileButton
             // 
-            getFileButton.Location = new Point(27, 261);
-            getFileButton.Margin = new Padding(6, 6, 6, 6);
+            getFileButton.Location = new Point(27, 209);
+            getFileButton.Margin = new Padding(6);
             getFileButton.Name = "getFileButton";
             getFileButton.Size = new Size(139, 49);
             getFileButton.TabIndex = 11;
@@ -122,7 +121,7 @@
             Controls.Add(getFileButton);
             Controls.Add(dataGridView1);
             Controls.Add(groupBox1);
-            Margin = new Padding(6, 6, 6, 6);
+            Margin = new Padding(6);
             Name = "Form1";
             Text = "Form1";
             groupBox1.ResumeLayout(false);
